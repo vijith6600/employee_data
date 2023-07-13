@@ -17,6 +17,11 @@ function save(){
 }
 
 function search(){
-    if(id in localstorage)
-    localStorage.getItem(id)
+    if( searchbox.value in localStorage){
+        alert(`User ${searchbox.value} Found`)
+    }
+
+    else{
+        alert(`User Doesnot Exist please login Again`)
+    }
 }
