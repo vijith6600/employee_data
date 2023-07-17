@@ -18,10 +18,17 @@ function save(){
 
 function search(){
     if( searchbox.value in localStorage){
-        alert(`User ${searchbox.value} Found`)
+        employee = JSON.parse(localStorage.getItem(searchbox.value))
+       result.innerHTML= `<p> Employee Id : ${employee.id} </p>
+       <p> Employee Name : ${employee.name} </p>
+       <p> Employee Address : ${employee.address} </p>
+       <p> Employee Designation : ${employee.desig} </p>
+       <p> Employee Salary : ${employee.salary} </p>` 
     }
 
     else{
+        result.innerHTML= null
+
         alert(`User Doesnot Exist please login Again`)
     }
 }
